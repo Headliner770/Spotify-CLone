@@ -3,39 +3,7 @@ import { Router } from "express";
 const router = Router();
 
 router.get("/", (req, res) => {
-  res.send("User route with GET method");
-});
-
-router.post("/", (req, res) => {
-  res.send("User route with GET method");
-
-
-
-
-
-
-
-
-  
-});
-
-router.delete("/", (req, res) => {
-  res.send("User route with GET method");
-});
-
-router.get("/", (req, res) => {
-  res.send("User route with GET method");
-});
-
-router.get("/", (req, res) => {
-  res.send("User route with GET method");
-});
-
-router.get("/", (req, res) => {
-  res.send("User route with GET method");
-});
-
-router.get("/", (req, res) => {
+  req.auth.userId;
   res.send("User route with GET method");
 });
 

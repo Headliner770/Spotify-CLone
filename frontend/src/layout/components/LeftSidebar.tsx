@@ -5,14 +5,18 @@ import { ScrollArea } from "@radix-ui/react-scroll-area";
 import { HomeIcon, Library, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import PlaylistSkeleton from "./skeletons/PlaylistSkeleton";
+import { useEffect } from "react";
+import { useMusicStore } from "@/stores/useMusicStore";
 
 const LeftSidebar = () => {
-  const isLoading = false;
+  const { songs, albums, fetchAlbums, isLoading } = useMusicStore();
 
-  // data fetching => zustand
+  useEffect(() => {
+    fetchAlbums();
+  }, [fetchAlbums]);
 
-  const [playki]
-  
+  console.log({ albums });
+
   return (
     <div className="h-full flex-col gap-2">
       {/* Navigation menu */}

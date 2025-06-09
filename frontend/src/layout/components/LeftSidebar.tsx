@@ -8,6 +8,10 @@ import PlaylistSkeleton from "./skeletons/PlaylistSkeleton";
 
 const LeftSidebar = () => {
   const isLoading = false;
+
+  // data fetching => zustand
+
+  const [playki]
   
   return (
     <div className="h-full flex-col gap-2">

@@ -1,19 +1,19 @@
 import { useChatStore } from "@/stores/useChatStore";
-import type { useUser } from "@clerk/clerk-react";
+import { useUser } from "@clerk/clerk-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
 import { HeadphonesIcon, Music, Users } from "lucide-react";
 import { useEffect } from "react";
 
 const FriendsActivity = () => {
-  const { users, isLoading, error, fetchUsers } = useChatStore();
+  const { users, fetchUsers } = useChatStore();
   const { user } = useUser();
 
   useEffect(() => {
     if (user) fetchUsers();
   }, [fetchUsers, user]);
 
-  const isPlaying = true;
+  const isPlaying = false;
 
   return (
     <div className="h-full bg-zinc-900 rounded-lg flex flex-col">
@@ -57,10 +57,10 @@ const FriendsActivity = () => {
                   {isPlaying ? (
                     <div className="mt-1">
                       <div className="mt-1 text-sm text-white font-medium truncate">
-                        {activity.replace("Playing ", "").split(" by ")[0]}
+                        Cardigan
                       </div>
                       <div className="text-xs text-zinc-400 truncate">
-                        {activity.split(" by ")[1]}
+                        by Taylor Swift
                       </div>
                     </div>
                   ) : (
